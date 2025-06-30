@@ -401,10 +401,12 @@ h1 {
   }
 
   .image-wrapper-z img,
-  .image-wrapper-t img {
-    width: 100%;
-    height: 100%;
-  }
+.image-wrapper-t img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: none;
+}
 
   .member-info {
     max-width: 100%;

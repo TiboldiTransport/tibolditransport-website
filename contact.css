@@ -132,3 +132,45 @@ a {
   flex-direction: column; /* stacks vertically on mobile */
 }
 
+@media (max-width: 768px) {
+  .team-member {
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+  }
+
+  .image-wrapper-z, .image-wrapper-t {
+    width: 180px;
+    height: 180px;
+    margin: 0 auto;
+  }
+
+  .member-info {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .flip-container {
+    width: 90%;
+    height: auto;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  .reference-section {
+    padding: 50px 20px;
+  }
+
+  .references {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .reference-item {
+    width: 100%;
+  }
+}
+
+

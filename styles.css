@@ -1,0 +1,332 @@
+/* Reset default margin and padding for all elements */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*Header style*/
+
+body, html {
+  height: 100%;
+  font-family: Arial, sans-serif;
+  background-color: black;
+  color: white;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+.logo {
+  position: fixed; /* fixed to viewport */
+  top: 15px;
+  left: -7px;
+  height: 60px; /* adjust as needed */
+  width: auto;
+  display: block;
+  z-index: 1000;
+}
+
+h1 {
+  font-size: 4.5rem;
+  font-weight: 300;
+  user-select: none;
+  margin-top: 80px; /* so text is below logo */
+    letter-spacing: 4.5px;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  font-weight: 100;
+  user-select: none;
+  margin-top: 10px;
+  letter-spacing: 2.5px;
+}
+
+/* Header style */
+/* Buttons style */
+
+.buttons {
+  margin-top: 30px;
+  display: flex;
+  gap: 20px; /* space between buttons */
+  justify-content: center;
+}
+
+.btn {
+  background-color: white;
+  color: #000000;
+  padding: 12px 30px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  user-select: none;
+}
+
+.btn:hover {
+  background-color: #3086ff;
+  color: white;
+}
+
+/* Button style */
+/*About style*/
+
+.textbox {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  color: white;
+  max-width: 500px;
+  margin: 50px auto 50px;
+  text-align: left;
+}
+
+.textbox h1 {
+  font-size: 2.5rem;
+  font-weight: 300;
+  margin-top: 0; /* remove space above */
+  margin-bottom: 20px;
+  user-select: none;
+}
+
+
+.textbox p {
+  font-size: 1.2rem;
+  font-weight: 200;
+  line-height: 1.6;
+  user-select: none;
+  text-align: left;
+}
+
+/* Flip container setup */
+/* Flip container setup - thinner box */
+.flip-container {
+  perspective: 1000px;
+  width: 400px; /* made narrower */
+  margin: 120px auto;
+  cursor: pointer;
+}
+
+.flipper {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-container.flipped .flipper {
+  transform: rotateY(180deg);
+}
+
+/* Front and back shared styles */
+.front, .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  overflow: hidden;
+}
+
+/* Front side */
+.front h1 {
+  font-size: 4rem;
+  font-weight: 300;
+  margin: 0;
+  user-select: none;
+  transition: opacity 0.5s ease;
+}
+
+/* Hide the Rólunk text when flipped */
+.flip-container.flipped .front h1 {
+  opacity: 0;
+}
+
+/* Back side */
+.back {
+  transform: rotateY(180deg);
+  text-align: middle;
+}
+
+.back p {
+  font-size: 1.1rem;
+  font-weight: 200;
+  line-height: 1.6;
+  user-select: none;
+}
+
+/* Layout: Two columns */
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 80px;
+  margin-top: 100px;
+  padding: 0 40px;
+}
+
+/* Left column: team */
+.team-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 50px;
+  max-width: 400px;
+}
+
+/* Larger team boxes */
+.team-member {
+  display: flex;
+  gap: 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  border-radius: 10px;
+  color: white;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
+  height: 200px;
+  align-items: center;
+}
+
+.team-member img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.member-info h3 {
+  margin: 0 0 5px;
+  font-size: 1.3rem;
+  font-weight: 300;
+}
+
+.member-info p {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 200;
+  line-height: 1.5;
+}
+
+/* Right column: flip card wrapper */
+.flip-wrapper {
+  display: flex;
+  align-items: center; /* vertical centering */
+}
+
+/* Flip container */
+.flip-container {
+  perspective: 1000px;
+  width: 400px;
+  height: 250px;
+  cursor: pointer;
+}
+
+.flipper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-container.flipped .flipper {
+  transform: rotateY(180deg);
+}
+
+.front, .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  overflow: hidden;
+}
+
+.front h1 {
+  font-size: 3.5rem;
+  font-weight: 300;
+  margin: 0;
+  user-select: none;
+  transition: opacity 0.5s ease;
+}
+
+.flip-container.flipped .front h1 {
+  opacity: 0;
+}
+
+.back {
+  transform: rotateY(180deg);
+  text-align: middle;
+}
+
+.back p {
+  font-size: 1.1rem;
+  font-weight: 200;
+  line-height: 1.6;
+  user-select: none;
+}
+
+.team-member {
+  display: flex;
+  gap: 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  border-radius: 10px;
+  color: white;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
+  /* Increase width to fit big circle + text */
+  width: 700px;           /* or use max-width: 100%; for responsive */
+  min-height: 320px;      /* enough height for 300px circle */
+  align-items: center;
+  box-sizing: border-box; /* include padding in width */
+}
+
+.image-wrapper {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid white;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.image-wrapper img {
+  position: relative;
+  width: 300px;  /* exactly fill container */
+  height: 300px;
+  object-fit: cover;
+  left: 0;
+  top: 0;
+}
+
+.member-info {
+  flex: 1; /* take remaining space */
+  /* Optional: limit width */
+  max-width: 350px;
+}
+
+
+
+/* About style */

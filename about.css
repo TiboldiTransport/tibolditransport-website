@@ -160,18 +160,6 @@ h1 {
   gap: 50px;
 }
 
-/* Larger team boxes */
-.team-member {
-  display: flex;
-  gap: 20px;
-  background-color: rgba(255, 255, 255, 0.1);
-  padding: 30px;
-  border-radius: 10px;
-  color: white;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
-  height: 200px;
-  align-items: center;
-}
 
 .team-member img {
   width: 100px;
@@ -181,7 +169,7 @@ h1 {
 }
 
 .member-info h3 {
-  margin: 0 0 5px;
+  margin: 0 0 0.3125rem;
   font-size: 2.5rem;
   font-weight: 300;
 }
@@ -252,36 +240,35 @@ h1 {
 
 .team-member {
   display: flex;
-  gap: 20px;
+  gap: 1.25rem; /* 20px */
   background-color: rgba(255, 255, 255, 0.1);
-  padding: 30px;
-  border-radius: 10px;
+  padding: 1.875rem; /* 30px */
+  border-radius: 0.625rem; /* 10px */
   color: white;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
-  /* Increase width to fit big circle + text */
-  width: 700px;           /* or use max-width: 100%; for responsive */
-  min-height: 320px;      /* enough height for 300px circle */
+  box-shadow: 0 0 0.9375rem rgba(0, 0, 0, 0.25); /* 15px */
+  width: 43.75rem; /* 700px */
+  min-height: 20rem; /* 320px */
   align-items: center;
-  box-sizing: border-box; /* include padding in width */
+  box-sizing: border-box;
 }
 
 .image-wrapper-z {
-  width: 300px;
-  height: 300px;
+  width: 18.75rem; /* 300px */
+  height: 18.75rem; /* 300px */
   border-radius: 50%;
   overflow: hidden;
-  border: 2px solid white;
+  border: 0.125rem solid white;
   flex-shrink: 0;
   position: relative;
 }
 
 
 .image-wrapper-t {
-  width: 300px;
-  height: 300px;
+  width: 18.75rem; /* 300px */
+  height: 18.75rem; /* 300px */
   border-radius: 50%;
   overflow: hidden;
-  border: 2px solid white;
+  border: 0.125rem solid white;
   flex-shrink: 0;
   position: relative;
 }
@@ -291,27 +278,24 @@ h1 {
 .image-wrapper-z img {
   width: 200%;
   height: 200%;
-  object-fit: contain; /* shows full image inside the circle */
-  object-position: center;
+  object-fit: contain;
   display: block;
-  transform: translate(-130px, -100px); /* adjust position to center */
+  transform: translate(-8.125rem, -6.25rem); /* -130px, -100px */
 }
 
 
 .image-wrapper-t img {
   width: 200%;
   height: 200%;
-  object-fit: contain; /* shows full image inside the circle */
-  object-position: relative;
+  object-fit: contain;
   display: block;
-  transform: translate(-180px, -140px); /* adjust position to center */
+  transform: translate(-11.25rem, -8.75rem); /* -180px, -140px */
 }
 
 
 .member-info {
-  flex: 1; /* take remaining space */
-  /* Optional: limit width */
-  max-width: 350px;
+  flex: 1;
+  max-width: 21.875rem; /* 350px */
 }
 
 .home-button {
@@ -343,13 +327,12 @@ h1 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
-  height: 400px; /* Full screen */
+  height: 25rem; /* 400px */
   width: 100%;
-  padding: 100px;
+  padding: 6.25rem; /* 100px */
   background-color: rgba(255, 255, 255, 0.1);
   color: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  box-shadow: 0 0 0.9375rem rgba(0,0,0,0.5); /* 15px */
   box-sizing: border-box;
 }
 
@@ -357,7 +340,7 @@ h1 {
 .reference-section h2 {
   font-size: 2.5rem;
   font-weight: 300;
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem; /* 20px */
   text-align: center;
 }
 
@@ -370,24 +353,25 @@ h1 {
 .references {
   display: flex;
   flex-direction: row;
-  gap: 30px;
-  max-width: 900px;
+  gap: 1.875rem; /* 30px */
+  max-width: 56.25rem; /* 900px */
   margin: 0 auto;
 }
 
 .reference-item {
   background-color: rgba(255, 255, 255, 0.05);
-  padding: 30px;
-  border-radius: 30px;
+  padding: 1.875rem; /* 30px */
+  border-radius: 1.875rem; /* 30px */
   text-align: left;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 0.625rem rgba(255, 255, 255, 0.1); /* 10px */
 }
 
 .reference-item h3 {
   font-size: 1.8rem;
-  margin-bottom: 10px;
+  margin-bottom: 0.625rem; /* 10px */
   font-weight: 300;
 }
+
 
 .reference-item p {
   font-size: 1rem;
@@ -396,14 +380,14 @@ h1 {
 }
 
 .scroll-btn {
-  margin-top: 20px;
-  padding: 12px 25px;
+  margin-top: 1.25rem; /* 20px */
+  padding: 0.75rem 1.5625rem; /* 12px 25px */
   font-size: 1.1rem;
   font-weight: 300;
   color: white;
   background-color: rgba(255, 255, 255, 0.15);
-  border: 2px solid white;
-  border-radius: 25px;
+  border: 0.125rem solid white;
+  border-radius: 1.5625rem; /* 25px */
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
   user-select: none;
@@ -412,7 +396,7 @@ h1 {
 .scroll-btn:hover {
   background-color: white;
   color: black;
-  transform: translateY(-3px);
+  transform: translateY(-0.1875rem); /* -3px */
 }
 
 .star {
@@ -431,11 +415,13 @@ h1 {
     flex-direction: column;
     width: 100%;
     height: auto;
+    gap: 1rem;
   }
 
-  .image-wrapper-z, .image-wrapper-t {
-    width: 180px;
-    height: 180px;
+  .image-wrapper-z,
+  .image-wrapper-t {
+    width: 11.25rem; /* 180px */
+    height: 11.25rem;
     margin: 0 auto;
   }
 
@@ -444,13 +430,14 @@ h1 {
     text-align: center;
   }
 
-    .flip-container {
+   .flip-container {
+    width: 90%;
+    max-width: 20rem;
     margin: 3rem auto;
-    max-width: 20rem; /* slightly smaller card */
   }
 
   h1 {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
   }
 
   .back p {
@@ -458,12 +445,12 @@ h1 {
   }
 
   .reference-section {
-    padding: 50px 20px;
+    padding: 3.125rem 1.25rem; /* 50px 20px */
   }
 
   .references {
     flex-direction: column;
-    gap: 20px;
+    gap: 1.25rem; /* 20px */
   }
 
   .reference-item {

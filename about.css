@@ -17,10 +17,15 @@ body, html {
 }
 
 .logo {
-  display: block;
-  margin: 1.25rem auto; /* 20px */
   height: 3.75rem;
   width: auto;
+}
+
+.logo-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center; /* Default: center for desktop */
+  padding: 1rem 1.25rem;
 }
 
 h1 {
@@ -459,10 +464,14 @@ h1 {
     width: 100%;
   }
 
+  .logo-wrapper {
+    justify-content: flex-end;
+  }
+
   .scroll-btn {
     width: 100%;
     text-align: center;
   }
 }
-
+ 
 /*about style end*/

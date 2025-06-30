@@ -31,14 +31,6 @@ body {
   color: white;
 }
 
-/* Logo */
-.logo {
-  display: block;
-  margin: 1.25rem auto; /* 20px */
-  height: 3.75rem;
-  width: auto;
-}
-
 /* Center content */
 .center-content {
   display: flex;
@@ -140,5 +132,25 @@ a {
   padding: 1rem;
 }
 
+/* Logo wrapper controls alignment */
+.logo-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center; /* Default: center for desktop */
+  padding: 1rem 1.25rem;
+}
+
+.logo {
+  height: 3.75rem;
+  width: auto;
+}
+
+
+/* On smartphones, align logo to the right */
+@media (max-width: 768px) {
+  .logo-wrapper {
+    justify-content: flex-end;
+  }
+}
 
 

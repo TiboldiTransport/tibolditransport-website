@@ -24,6 +24,11 @@ body {
   font-weight: bold;
 }
 
+.home-button:hover {
+  background-color: #3086ff;
+  color: white;
+}
+
 /* Logo at top-center */
 .logo {
   height: 60px;
@@ -121,3 +126,9 @@ a {
   text-align: center;
   font-weight: bold;
 }
+
+.container {
+  display: flex;
+  flex-direction: column; /* stacks vertically on mobile */
+}
+

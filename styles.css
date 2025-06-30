@@ -327,6 +327,12 @@ h1 {
   max-width: 350px;
 }
 
+.container {
+  display: flex;
+  flex-direction: column; /* stacks vertically on mobile */
+}
+
+
 
 
 /* About style */

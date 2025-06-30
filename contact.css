@@ -33,9 +33,10 @@ body {
 
 /* Logo */
 .logo {
-  height: 3.5rem;
-  margin-top: 1rem;
-  max-width: 80%;
+  display: block;
+  margin: 1.25rem auto; /* 20px */
+  height: 3.75rem;
+  width: auto;
 }
 
 /* Center content */
@@ -74,7 +75,7 @@ h1 {
 
 a {
   color: white;
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 .email-form {

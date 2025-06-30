@@ -1,24 +1,25 @@
+/* Reset default margin and padding for all elements */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html, body {
-  height: 100%;
-  width: 100%;
-  font-family: Arial, sans-serif;
+/*Header style*/
+
+body, html {
+  min-height: 100vh;
+  height: auto;
+  overflow-x: hidden;
   background-color: black;
+  font-family: Arial, sans-serif;
   color: white;
-  position: relative;
-  text-align: center;
-  font-size: 1rem;
 }
 
 .logo {
   display: block;
-  margin: 1.25rem auto;
-  height: 3.75rem;
+  margin: 20px auto;
+  height: 60px;
   width: auto;
 }
 
@@ -26,35 +27,40 @@ h1 {
   font-size: 4.5rem;
   font-weight: 300;
   user-select: none;
-  margin-top: 5rem;
-  letter-spacing: 0.28rem;
+  margin-top: 80px; /* so text is below logo */
+    letter-spacing: 4.5px;
 }
 
 .subtitle {
   font-size: 1.5rem;
   font-weight: 100;
   user-select: none;
-  margin-top: 0.625rem;
-  letter-spacing: 0.16rem;
+  margin-top: 10px;
+  letter-spacing: 2.5px;
 }
+
+/* Header style */
+/*About style*/
 
 .textbox {
   background-color: rgba(255, 255, 255, 0.1);
-  padding: 2.5rem;
-  border-radius: 0.625rem;
-  box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.2);
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
   color: white;
-  max-width: 31.25rem;
-  margin: 3.125rem auto;
+  max-width: 500px;
+  margin: 50px auto 50px;
   text-align: left;
 }
 
 .textbox h1 {
   font-size: 2.5rem;
   font-weight: 300;
-  margin: 0 0 1.25rem;
+  margin-top: 0; /* remove space above */
+  margin-bottom: 20px;
   user-select: none;
 }
+
 
 .textbox p {
   font-size: 1.2rem;
@@ -64,11 +70,13 @@ h1 {
   text-align: left;
 }
 
+/* Flip container setup */
+/* Flip container setup - thinner box */
 .flip-container {
-  perspective: 62.5rem;
-  width: 37.5rem;
-  height: 25rem;
-  margin: 7.5rem auto;
+  perspective: 1000px;
+  width: 600px; /* made narrower */
+  height: 400px;
+  margin: 120px auto;
   cursor: pointer;
 }
 
@@ -80,12 +88,128 @@ h1 {
   transform-style: preserve-3d;
 }
 
+/* New inside wrapper to control vertical placement */
 .flip-inner {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: center ;
   height: 100%;
-  margin-top: 6.25rem;
+  margin-top: 100px; /* push it between the two team members */
+}
+
+
+.flip-container.flipped .flipper {
+  transform: rotateY(180deg);
+}
+
+/* Front and back shared styles */
+.front, .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  overflow: hidden;
+}
+
+/* Hide the Rólunk text when flipped */
+.flip-container.flipped .front h1 {
+  opacity: 0;
+}
+
+/* Back side */
+.back {
+  transform: rotateY(180deg);
+  text-align: middle;
+}
+
+.back p {
+  font-size: 1.42rem;
+  font-weight: 100;
+  line-height: 1.6;
+  user-select: none;
+  text-align: middle;
+  font-style: italic;
+}
+
+/* Layout: Two columns */
+.main-container {
+  flex-direction: column;
+  display: flex;
+  justify-content: space-between; /* ensures left/right spacing */
+  align-items: center;
+  gap: 80px;
+  padding: 40px 80px;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+
+/* Left column: team */
+.team-column {
+  flex: 0 0 auto;           /* don't stretch */
+  width: 750px;             /* matches team-member width */
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+/* Larger team boxes */
+.team-member {
+  display: flex;
+  gap: 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  border-radius: 10px;
+  color: white;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
+  height: 200px;
+  align-items: center;
+}
+
+.team-member img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.member-info h3 {
+  margin: 0 0 5px;
+  font-size: 2.5rem;
+  font-weight: 300;
+}
+
+.member-info p {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 200;
+  line-height: 1.5;
+}
+
+/* Right column: flip card wrapper */
+.flip-wrapper {
+  flex: 1;                  /* take remaining space */
+  display: flex;
+  justify-content: flex-end; /* push flip box to the right */
+  align-items: center;
+  min-width: 400px;
+}
+
+
+.flipper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
 }
 
 .flip-container.flipped .flipper {
@@ -98,14 +222,22 @@ h1 {
   height: 100%;
   backface-visibility: hidden;
   background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 0.625rem;
-  box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
   color: white;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1.875rem;
+  padding: 30px;
   overflow: hidden;
+}
+
+.front h1 {
+  font-size: 3.9rem;
+  font-weight: 700;
+  margin: 0;
+  user-select: none;
+  transition: opacity 0.5s ease;
 }
 
 .flip-container.flipped .front h1 {
@@ -114,124 +246,91 @@ h1 {
 
 .back {
   transform: rotateY(180deg);
-  text-align: center;
+  text-align: middle;
 }
 
-.back p {
-  font-size: 1.42rem;
-  font-weight: 100;
-  line-height: 1.6;
-  user-select: none;
-  text-align: center;
-  font-style: italic;
-}
-
-.main-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 5rem;
-  padding: 2.5rem 5rem;
-  max-width: 100rem;
-  margin: 0 auto;
-}
-
-.team-column {
-  flex: 0 0 auto;
-  width: 46.875rem;
-  display: flex;
-  flex-direction: column;
-  gap: 3.125rem;
-}
 
 .team-member {
   display: flex;
-  gap: 1.25rem;
+  gap: 20px;
   background-color: rgba(255, 255, 255, 0.1);
-  padding: 1.875rem;
-  border-radius: 0.625rem;
+  padding: 30px;
+  border-radius: 10px;
   color: white;
-  box-shadow: 0 0 0.9375rem rgba(0, 0, 0, 0.25);
-  width: 43.75rem;
-  min-height: 20rem;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
+  /* Increase width to fit big circle + text */
+  width: 700px;           /* or use max-width: 100%; for responsive */
+  min-height: 320px;      /* enough height for 300px circle */
   align-items: center;
-  box-sizing: border-box;
+  box-sizing: border-box; /* include padding in width */
 }
 
-.team-member img {
-  width: 6.25rem;
-  height: 6.25rem;
-  object-fit: cover;
-  border-radius: 50%;
-}
-
-.member-info h3 {
-  margin: 0 0 0.3125rem;
-  font-size: 2.5rem;
-  font-weight: 300;
-}
-
-.member-info p {
-  margin: 0;
-  font-size: 1.2rem;
-  font-weight: 200;
-  line-height: 1.5;
-}
-
-.flip-wrapper {
-  flex: 1;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  min-width: 25rem;
-}
-
-.image-wrapper-z, .image-wrapper-t {
-  width: 18.75rem;
-  height: 18.75rem;
+.image-wrapper-z {
+  width: 300px;
+  height: 300px;
   border-radius: 50%;
   overflow: hidden;
-  border: 0.125rem solid white;
+  border: 2px solid white;
   flex-shrink: 0;
   position: relative;
 }
 
+
+.image-wrapper-t {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid white;
+  flex-shrink: 0;
+  position: relative;
+}
+
+
+
 .image-wrapper-z img {
   width: 200%;
   height: 200%;
-  object-fit: contain;
+  object-fit: contain; /* shows full image inside the circle */
   object-position: center;
   display: block;
-  transform: translate(-8.125rem, -6.25rem);
+  transform: translate(-130px, -100px); /* adjust position to center */
 }
+
 
 .image-wrapper-t img {
   width: 200%;
   height: 200%;
-  object-fit: contain;
-  object-position: center;
+  object-fit: contain; /* shows full image inside the circle */
+  object-position: relative;
   display: block;
-  transform: translate(-11.25rem, -8.75rem);
+  transform: translate(-180px, -140px); /* adjust position to center */
 }
 
+
 .member-info {
-  flex: 1;
-  max-width: 21.875rem;
+  flex: 1; /* take remaining space */
+  /* Optional: limit width */
+  max-width: 350px;
 }
 
 .home-button {
   position: fixed;
-  top: 1.25rem;
-  left: 1.25rem;
-  padding: 0.625rem 1.25rem;
+  top: 20px;
+  left: 20px;
+  padding: 10px 20px;
   background-color: white;
   color: black;
-  border-radius: 0.375rem;
+  border-radius: 6px;
   text-decoration: none;
   font-weight: bold;
   font-size: 1rem;
-  z-index: 1001;
+  z-index: 1001; /* ensure it sits above other elements */
   transition: background-color 0.3s ease;
+}
+
+.home-button:hover {
+  background-color: #ccc;
 }
 
 .home-button:hover {
@@ -244,21 +343,24 @@ h1 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 25rem;
+
+  height: 400px; /* Full screen */
   width: 100%;
-  padding: 6.25rem;
+  padding: 100px;
   background-color: rgba(255, 255, 255, 0.1);
   color: white;
-  box-shadow: 0 0 0.9375rem rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
   box-sizing: border-box;
 }
+
 
 .reference-section h2 {
   font-size: 2.5rem;
   font-weight: 300;
-  margin-bottom: 1.25rem;
+  margin-bottom: 20px;
   text-align: center;
 }
+
 
 .reference-section.show {
   opacity: 1;
@@ -268,22 +370,22 @@ h1 {
 .references {
   display: flex;
   flex-direction: row;
-  gap: 1.875rem;
-  max-width: 56.25rem;
+  gap: 30px;
+  max-width: 900px;
   margin: 0 auto;
 }
 
 .reference-item {
   background-color: rgba(255, 255, 255, 0.05);
-  padding: 1.875rem;
-  border-radius: 1.875rem;
+  padding: 30px;
+  border-radius: 30px;
   text-align: left;
-  box-shadow: 0 0 0.625rem rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
 }
 
 .reference-item h3 {
   font-size: 1.8rem;
-  margin-bottom: 0.625rem;
+  margin-bottom: 10px;
   font-weight: 300;
 }
 
@@ -294,14 +396,14 @@ h1 {
 }
 
 .scroll-btn {
-  margin-top: 1.25rem;
-  padding: 0.75rem 1.5625rem;
+  margin-top: 20px;
+  padding: 12px 25px;
   font-size: 1.1rem;
   font-weight: 300;
   color: white;
   background-color: rgba(255, 255, 255, 0.15);
-  border: 0.125rem solid white;
-  border-radius: 1.5625rem;
+  border: 2px solid white;
+  border-radius: 25px;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
   user-select: none;
@@ -310,32 +412,30 @@ h1 {
 .scroll-btn:hover {
   background-color: white;
   color: black;
-  transform: translateY(-0.1875rem);
+  transform: translateY(-3px);
 }
 
 .star {
   font-size: 1.5rem;
   color: gold;
-  margin-left: 0.3125rem;
+  margin-left: 5px;
 }
 
 .container {
   display: flex;
-  flex-direction: column;
+  flex-direction: column; /* stacks vertically on mobile */
 }
 
-/* Media Queries */
-@media (max-width: 48rem) {
+@media (max-width: 768px) {
   .team-member {
     flex-direction: column;
     width: 100%;
     height: auto;
   }
 
-  .image-wrapper-z,
-  .image-wrapper-t {
-    width: 11.25rem;
-    height: 11.25rem;
+  .image-wrapper-z, .image-wrapper-t {
+    width: 180px;
+    height: 180px;
     margin: 0 auto;
   }
 
@@ -345,24 +445,30 @@ h1 {
   }
 
   .flip-container {
-    width: 90%;
-    height: auto;
-  }
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  aspect-ratio: 3 / 2;
+}
 
   h1 {
     font-size: 2.5rem;
   }
 
   .reference-section {
-    padding: 3.125rem 1.25rem;
+    padding: 50px 20px;
   }
 
   .references {
     flex-direction: column;
-    gap: 1.25rem;
+    gap: 20px;
   }
 
   .reference-item {
     width: 100%;
   }
 }
+
+
+
+/* About style */

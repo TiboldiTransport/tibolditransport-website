@@ -93,10 +93,9 @@
   <p>&copy; 2025 Tiboldi Transport. Minden jog fenntartva.</p>
 </footer>
 <script>
-  function toggleMenu() {
-    const nav = document.getElementById('main-nav');
-    nav.classList.toggle('show');
-  }
+  document.querySelector('.menu-toggle').addEventListener('click', function () {
+    document.querySelector('.nav-links').classList.toggle('open');
+  });
 </script>
 </body>
 </html>

@@ -1,96 +1,95 @@
 <!DOCTYPE html>
 <html lang="hu">
 <head>
-
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Rólunk - Tiboldi Transport</title>
   <link rel="stylesheet" href="about.css" />
-
 </head>
 <body>
 
-  <a href="index.html" class="home-button">Home</a>
-  <div class="logo-wrapper">
-  <a href="index.html"><img src="logo.png" alt="Tiboldi Transport logo" class="logo" /></a>
-</div>
-<div class="container"></div>
-  <!-- MAIN CONTENT - FIRST PAGE -->
-  <div class="main-container">
-    <!-- Left Column: team members -->
-    <div class="team-column">
-      <div class="team-member">
-        <div class="image-wrapper-t">
-          <img src="tamas.jpg" alt="Tamas" />
-        </div>
-        <div class="member-info">
-          <h3>Tiboldi Tamás</h3>
-          <p>Tulajdonos, gazdaságtan hallgató, ügyvezető partner.</p>
-        </div>
-      </div>
-      
-      <div class="team-member">
-        <div class="image-wrapper-z">
-          <img src="me.jpg" alt="Zoli" />
-        </div>
-        <div class="member-info">
-          <h3>Radinszky Zoltán</h3>
-          <p>Társtulajdonos, korlátolt felelősségű partner, operációs vezető.</p>
-        </div>
-      </div>
+  <header class="top-bar">
+    <div class="logo">
+      <a href="index 2.html"><img src="logo.png" alt="logo"></a>
     </div>
+    <nav>
+      <ul>
+        <li><a href="#">Szolgáltatásaink</a></li>
+        <li><a href="#">Árak</a></li>
+        <li><a href="about.html">Rólunk</a></li>
+        <li><a href="contact.html">Kapcsolat</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <!-- Right Column: Flip card + button -->
-    <div class="flip-wrapper">
-      <div class="flip-container" onclick="this.classList.toggle('flipped')">
-        <div class="flipper">
-          <div class="front">
-            <h1>Rólunk</h1>
+  <!-- Team Section with Background -->
+  <section class="team-section-wrapper">
+    <div class="overlay"></div>
+    <div class="main-container">
+      <div class="team-column">
+        <div class="team-row">
+          <div class="team-member">
+            <div class="image-wrapper">
+              <img src="tamas.jpg" alt="Tamas" />
+            </div>
+            <div class="member-info">
+              <h3>Tiboldi Tamás</h3>
+              <p>Tulajdonos, gazdaságtan hallgató, ügyvezető partner.</p>
+            </div>
           </div>
-          <div class="back">
-            <p>
-            Sziasztok! <br>
-            Budapesti egyetemisták vagyunk, akik 2,5 éve segítenek költözni, fuvarozni, cipekedni.
-            Panasz nélkül, jó sztorikkal, elégedett ügyfelekkel.
-            Ha gyors, stresszmentes és jó hangulatú szállítást szeretnél, vedd fel velünk a kapcsolatot!
-            </p>
+          <div class="team-member reverse">
+            <div class="image-wrapper">
+              <img src="me.jpg" alt="Zoli" />
+            </div>
+            <div class="member-info">
+              <h3>Radinszky Zoltán</h3>
+              <p>Társtulajdonos, korlátolt felelősségű partner, operációs vezető.</p>
+            </div>
           </div>
         </div>
-         <button id="scrollBtn" class="scroll-btn">Referenciák megtekintése ↓</button>
       </div>
     </div>
+  </section>
+
+  <!-- About Section -->
+  <div class="about-stripe">
+    <h1>Rólunk</h1>
+    <div class="divider"></div>
+    <div class="about-text">
+      <p>
+        Sziasztok! <br> Budapesti egyetemisták vagyunk, akik 2,5 éve segítenek költözni, fuvarozni, cipekedni.
+        Csapatunk a kis- és közepes nagyságú szállítmányokra specializálódott, de nem riadunk vissza a nagyobb kihívásoktól sem.
+        Panasz nélkül, jó sztorikkal, elégedett ügyfelekkel várunk. Ha gyors, stresszmentes és jó hangulatú szállítást szeretnél, vedd fel velünk a kapcsolatot!
+      </p>
+    </div>
+    <div class="divider"></div>
   </div>
- 
-  
 
-  <script>
-    document.getElementById('scrollBtn').addEventListener('click', (event) => {
-      event.stopPropagation(); // Prevent flip toggle
-      document.getElementById('reference').scrollIntoView({ behavior: 'smooth' });
-    });
-  </script>
-
-</body>
-<!-- REFERENCE SECTION - SECOND PAGE -->
-  <section class="reference-section" id="reference">
+  <!-- References Section -->
+  <section class="reference-section">
     <h2>Referenciák</h2>
     <div class="references">
       <div class="reference-item">
         <h3>Kovács Dániel</h3>
         <p>Gyors, udvarias és megbízható srácok. Ritka az ilyen hozzáállás! Örömmel ajánlom mindenkinek!</p>
-        <p class="star ">  ★ ★ ★ ★</p>
+        <p class="star">★ ★ ★ ★</p>
       </div>
       <div class="reference-item">
         <h3>Szabó Réka</h3>
         <p>Többször is hívtuk már a céget, és eddig mindig sérületlenül és akadálymentesen megoldották a kérésünket. Nagyon rugalmasak és professzionálisan dolgoznak.</p>
-        <p class="star"> ★ ★ ★ ★ ★</p>
+        <p class="star">★ ★ ★ ★ ★</p>
       </div>
       <div class="reference-item">
         <h3>Tóth Márton</h3>
-        <p>Egy költözés alkalmával kértem a segítségüket, és őszintén mondhatom, hogy stresszmentessé tették az egész napot. Precízek, gyorsak, és még humort is hoztak magukkal! Csak ajánlani tudom őket bárkinek, aki nyugodt költözésre vágyik.</p>
-        <p class="star"> ★ ★ ★ ★ ★</p>
+        <p>Egy költözés alkalmával kértem a segítségüket, és őszintén mondhatom, hogy stresszmentessé tették az egész napot. Precízek, gyorsak, és még humort is hoztak magukkal!</p>
+        <p class="star">★ ★ ★ ★ ★</p>
       </div>
-      <!-- Add more references as needed -->
     </div>
   </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+  <p>&copy; 2025 Tiboldi Tamás. Minden jog fenntartva.</p>
+</footer>
+</body>
 </html>

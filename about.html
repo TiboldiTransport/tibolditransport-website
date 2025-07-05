@@ -10,10 +10,10 @@
 
   <header class="top-bar">
     <div class="logo">
-      <button class="menu-toggle" aria-label="Menü" onclick="toggleMenu()">☰ Menü</button>
       <a href="index.html"><img src="logo.png" alt="logo"></a>
     </div>
-    <nav>
+     <button class="menu-toggle" aria-label="Menü" onclick="toggleMenu()">☰ Menü</button>
+    <nav id="main-nav">
       <ul>
         <li><a href="#">Szolgáltatásaink</a></li>
         <li><a href="#">Árak</a></li>
@@ -90,11 +90,11 @@
 
   <!-- Footer -->
   <footer class="site-footer">
-  <p>&copy; 2025 Tiboldi Tamás. Minden jog fenntartva.</p>
+  <p>&copy; 2025 Tiboldi Transport. Minden jog fenntartva.</p>
 </footer>
 <script>
   function toggleMenu() {
-    const nav = document.querySelector('.top-bar nav');
+    const nav = document.getElementById('main-nav');
     nav.classList.toggle('show');
   }
 </script>

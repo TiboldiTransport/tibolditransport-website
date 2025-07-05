@@ -13,7 +13,7 @@
       <a href="index.html"><img src="logo.png" alt="logo"></a>
     </div>
      <button class="menu-toggle" aria-label="Menü" onclick="toggleMenu()">☰ Menü</button>
-    <nav id="main-nav">
+    <nav id="main-nav" class="nav-links">
       <ul>
         <li><a href="#">Szolgáltatásaink</a></li>
         <li><a href="#">Árak</a></li>
@@ -93,9 +93,9 @@
   <p>&copy; 2025 Tiboldi Transport. Minden jog fenntartva.</p>
 </footer>
 <script>
-  document.querySelector('.menu-toggle').addEventListener('click', function () {
-    document.querySelector('.nav-links').classList.toggle('open');
-  });
+  function toggleMenu() {
+    document.getElementById('main-nav').classList.toggle('open');
+  }
 </script>
 </body>
 </html>

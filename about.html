@@ -10,6 +10,7 @@
 
   <header class="top-bar">
     <div class="logo">
+      <button class="menu-toggle" aria-label="Menü" onclick="toggleMenu()">☰ Menü</button>
       <a href="index.html"><img src="logo.png" alt="logo"></a>
     </div>
     <nav>
@@ -91,5 +92,11 @@
   <footer class="site-footer">
   <p>&copy; 2025 Tiboldi Tamás. Minden jog fenntartva.</p>
 </footer>
+<script>
+  function toggleMenu() {
+    const nav = document.querySelector('.top-bar nav');
+    nav.classList.toggle('show');
+  }
+</script>
 </body>
 </html>

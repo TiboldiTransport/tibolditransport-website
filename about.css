@@ -22,7 +22,9 @@ body {
   height: 70px;
   display: flex;
   align-items: center;
+  justify-content: center; /* ✅ Centers nav */
   padding: 0 2rem;
+  flex-wrap: wrap;
 }
 
 .top-bar .logo img {
@@ -30,16 +32,23 @@ body {
   width: auto;
 }
 
+.logo {
+  position: absolute;
+  left: 2rem; /* or adjust for your layout */
+}
+
+
+.logo img {
+  height: 60px;
+  width: auto;
+}
+
 .top-bar nav {
-  position: static;
-  width: 100%;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.4s ease-in-out;
+  display: flex;
+  width: auto;
 }
 
 .top-bar nav ul {
-  list-style: none;
   display: flex;
   gap: 1.5rem;
 }
@@ -239,13 +248,40 @@ body {
   font-size: 0.9rem;
 }
 
+
 .nav-links {
   display: flex;
+  justify-content: center;
+  flex-grow: 0;
+}
+
+.nav-links ul {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center; /* ✅ Center items in the nav */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+
+.nav-links ul li a:hover {
+  background-color: white;
+  color: #333;
 }
 
 .menu-toggle {
   display: none;
 }
+
 /* Responsive */
 @media (max-width: 768px) {
  .team-member,
@@ -298,62 +334,63 @@ body {
 
 
   .top-bar {
-  flex-direction: column;
-  align-items: center;
-  height: auto;
-  padding: 1rem;
-  position: relative; /* Ensure children flow normally */
-}
-
-   .top-bar .logo {
-    text-align: center;
-    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    padding: 1rem;
   }
 
+   .top-bar .logo {
+  position: static; /* back to normal flow */
+  margin-bottom: 1rem;
+}
    
-   .menu-toggle {
-  display: block;
-  background: none;
-  border: none;
-  font-size: 1.3rem;
-  color: white;
-  cursor: pointer;
-  margin-top: 0.5rem;
-  z-index: 1100;
-}
+    .menu-toggle {
+    display: block;
+    background-color: #fff;
+    color: #333;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+
+.menu-toggle:hover {
+    background-color: #333;
+    color: #fff;
+  }
+
   
+ 
   .nav-links {
-  display: none;
-  flex-direction: column;
-  width: 100%;
-  background-color: #333;
-  margin-top: 0.5rem;
-}
-
-.nav-links.open {
-  display: flex;
-}
-
-  .nav-links ul {
-    display: flex;
+    display: none;
     flex-direction: column;
     width: 100%;
-    padding: 0;
-    margin: 0;
+    margin-top: 0.5rem;
+    background-color: #333;
+  }
+
+.nav-links.open {
+    display: flex;
+  }
+
+  .nav-links ul {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
   }
 
   .nav-links ul li {
     width: 100%;
   }
 
-  .nav-links ul li a {
+   .nav-links ul li a {
     display: block;
     width: 100%;
-    padding: 1rem;
-    color: white;
-    background-color: #333;
     text-align: center;
-    text-decoration: none;
+    padding: 1rem;
     border-top: 1px solid #444;
   }
 

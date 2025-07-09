@@ -1,21 +1,112 @@
 <!DOCTYPE html>
 <html lang="hu">
 <head>
-
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Tiboldi Transport</title>
-  <link rel="stylesheet" href="styles.css" />
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Költöztetés</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <img src="logo.png" alt="Tiboldi Transport logo" class="logo" />
-    <h1>Tiboldi Transport</h1>
-    <p class="subtitle">Szállítás, Gyorsan, Könnyedén</p>
-    
-    <div class="buttons">
-    <a href="contact.html" class="btn">Kapcsolat</a>
-    <a href="about.html" class="btn">Rólunk</a>
+
+  <header class="top-bar">
+    <div class="top-bar-inner">
+  <div class="logo">
+      <a href="index.html"><img src="logo.png" alt="logo"></a>
   </div>
+  <div class="menu-toggle-wrapper">
+    <button class="menu-toggle" aria-label="Menü" onclick="toggleMenu()">☰ Menü</button>
+  </div>
+
+    <nav id="main-nav" class="nav-links">
+      <ul>
+        <li><a href="szolgaltatas.html">Szolgáltatásaink</a></li>
+        <li><a href="arak.html">Árak</a></li>
+        <li><a href="about.html">Rólunk</a></li>
+        <li><a href="contact.html">Kapcsolat</a></li>
+      </ul>
+    </nav>
+
+    <div class="spacer"></div>
+  </div>
+</header>
+
+  <section class="hero">
+    <img src="stockmoving.jpg" alt="Költöztetés background">
+    <div class="hero-text">
+      <h1>KÖLTÖZTETÉS EGÉSZ MAGYARORSZÁGON</h1>
+      <h2>OLCSÓ - GYORS - SZAKSZERŰ</h2>
+      <p>A legjobb helyen jár, ha megbízható költöztetőket keres.</p>
+      <button><a href="contact.html">AJÁNLATKÉRÉS</a></button>
+    </div>
+  </section>
+
+
+ <section class="services-scroll-wrapper">
+  <button class="scroll-btn left" onclick="scrollServices(-1)">‹</button>
+
+  <div class="services-scroll-container">
+    <div class="services">
+      <div class="service">
+        <img src="budapest.png" alt="Budapest költöztetés ikon">
+        <h3>KÖLTÖZTETÉS BUDAPESTEN</h3>
+        <p>Budapest területén és környékén vállalunk költöztetést.</p>
+      </div>
+      <div class="service">
+        <img src="hu.png" alt="Belföld költöztetés ikon">
+        <h3>KÖLTÖZTETÉS BELFÖLDÖN</h3>
+        <p>Magyarország bármelyik részéről tudunk feláras költöztetést nyújtani.</p>
+      </div>
+      <div class="service">
+        <img src="butor.png" alt="Bútor szállítás ikon">
+        <h3>BÚTORSZÁLLÍTÁS</h3>
+        <p>Kis- és nagy méretű bútorok szállítását vállaljuk Magyarország szerte.</p>
+      </div>
+      <div class="service">
+        <img src="pen.png" alt="Iroda költöztetés ikon">
+        <h3>IRODA KÖLTÖZTETÉS</h3>
+        <p>Költözik az iroda? Bízza ránk! Országszerte vállalunk irodai költöztetést.</p>
+      </div>
+    </div>
+  </div>
+
+  <button class="scroll-btn right" onclick="scrollServices(1)">›</button>
+</section>
+<footer class="why-us">
+  <div class="why-us-content">
+    <div class="why-us-title">
+      <h2>Miért a Tiboldi Transport <br>csapatát válassza?</h2>
+    </div>
+    <div class="why-us-text">
+      <p>
+      Mert a Tiboldi Transport fiatalos és lelkes csapata lendületesen, 
+      megbízhatóan és figyelmesen segít bármilyen költözésben vagy fuvarozásban.
+      Nálunk a jó hangulat kéz a kézben jár a profizmussal: nemcsak gyorsak vagyunk, de figyelünk a
+      részletekre is. Ügyfeleink igényeit rugalmasan kezeljük, és minden helyzetre találunk megoldást. 
+      Válassz minket, ha stresszmentes, gördülékeny és korrekt szolgáltatást keresel!
+      </p>
+    </div>
+  </div>
+</footer>
+<!-- Add this script just before the closing </body> tag -->
+<script>
+  function toggleMenu() {
+    document.getElementById('main-nav').classList.toggle('open');
+  }
+</script>
+
+<script>
+  function scrollServices(direction) {
+    const container = document.querySelector('.services');
+    const boxWidth = container.offsetWidth;
+    container.scrollBy({
+      left: direction * boxWidth,
+      behavior: 'smooth'
+    });
+  }
+</script>
+
 </body>
+<footer class="site-footer">
+  <p>&copy; 2025 Tiboldi Transport. Minden jog fenntartva.</p>
+</footer>
 </html>

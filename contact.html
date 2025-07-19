@@ -1,45 +1,69 @@
-    <!DOCTYPE html>
-    <html lang="hu">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Kapcsolat</title>
-        <link rel="stylesheet" href="contact.css" />
-    </head>
-    <body>
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kapcsolat - Tiboldi Transport</title>
+  <link rel="stylesheet" href="contact.css" />
+</head>
+<body>
 
-    <a href="index.html" class="home-button">Home</a>
-    <div class="logo-wrapper">
-  <a href="index.html"><img src="logo.png" alt="Tiboldi Transport logo" class="logo" /></a>
-</div>
+  <!-- Top Navigation -->
+  <header class="top-bar">
+  <div class="logo">
+    <a href="index.html"><img src="logo.png" alt="logo"></a>
+  </div>
 
+  <button class="menu-toggle" aria-label="Menü" onclick="toggleMenu()">☰ Menü</button>
 
-    <div class="center-content">
-        <h1>Kapcsolat</h1>
-        <div class="contact-box">
-        <div class="row">
-        <div class="row">
-        Telefon: +36 70 905 2109<br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; +36 70 320 6864
-        </div>
-        <div class="row">Instagram: <a href="https://www.instagram.com/tiboldi.transport/">tiboldi.transport</a></div>
-        <div class="row">Facebook: <a href="https://www.facebook.com/profile.php?id=61577718579696">Tiboldi Transport</a></div>
-        <div class="row">Email: tibolditransport@gmail.com</div>
+  <nav id="main-nav" class="nav-links">
+    <ul>
+      <li><a href="index.html">Főoldal</a></li>
+      <li><a href="szolgaltatas.html">Szolgáltatásaink</a></li>
+      <li><a href="arak.html">Árak</a></li>
+      <li><a href="about.html">Rólunk</a></li>
+    </ul>
+  </nav>
+
+</header>
+
+  <!-- Contact Section -->
+  <section class="contact-section">
+    <div class="main-container">
+      <h1>Kapcsolat</h1>
+      <div class="divider"></div>
         
-      <form action="https://formspree.io/f/xvgrlgbq" method="POST" class="email-form">
-        <div class="kapcs">Ajánlatkérés</div>
-        <label for="email">Email címe:</label>
-        <input type="email" id="email" name="email" required>
-
-        <label for="message">Üzenet:</label>
-        <textarea id="message" name="message" required></textarea>
-
-        <button type="submit">Küldés</button>
-        </form>
-
-
+      <div class="contact-box">
+        <div class="contact-info">
+          <p><strong>Telefon:</strong><br>+36 70 905 2109<br>+36 70 320 6864</p>
+          <p><strong>Instagram:</strong> <a href="https://www.instagram.com/tiboldi.transport/" target="_blank">tiboldi.transport</a></p>
+          <p><strong>Facebook:</strong> <a href="https://www.facebook.com/profile.php?id=61577718579696" target="_blank">Tiboldi Transport</a></p>
+          <p><strong>Email:</strong> <a href="mailto:tibolditransport@gmail.com">tibolditransport@gmail.com</a></p>
         </div>
-    </div>
 
-    </body>
-    </html>
+        <form action="https://formspree.io/f/xvgrlgbq" method="POST" class="email-form">
+          <div class="kapcs">Ajánlatkérés</div>
+          <label for="email">Email*:</label>
+          <input type="email" id="email" name="email" required>
+
+          <label for="message">Üzenet*:</label>
+          <textarea id="message" name="message" required></textarea>
+
+          <button type="submit">Küldés</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <p>&copy; 2025 Tiboldi Transport. Minden jog fenntartva.</p>
+  </footer>
+
+  <script>
+  function toggleMenu() {
+    document.getElementById('main-nav').classList.toggle('open');
+  }
+</script>
+</body>
+</html>

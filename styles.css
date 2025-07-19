@@ -162,6 +162,8 @@ body {
   justify-content: space-around;
   padding: 2.5rem 1.25rem; /* 40px 20px */
   background: #fff;
+  scrollbar-width: none;          /* Firefox */
+  -ms-overflow-style: none; 
 }
 
 .service {
